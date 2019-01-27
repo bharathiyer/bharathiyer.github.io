@@ -1,49 +1,138 @@
-<!DOCTYPE html>
-<html lang="en-us">
+<!doctype html>
+<html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <title>Activity 1: Basic HTML Bio</title>
+    <title>Latitude with Attitude</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <!-- JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
 </head>
 
 <body>
-  <h1>Hi, I'm Bharath</h1>
-  <h4>
-    <strong>
-      I'm a Computer Architect from Austin, Texas
-    </strong>
-  </h4>
 
-  <div>
-    <p>I enjoy motorcycles, travel and books. I also enjoy building super-awesome computer processors.
-      <br>
-      The new Ducati Diavel 1260 S is my dream bike. Hopefully will be reality soon!
-    </p>
-  </div>
+    <header class="navbar navbar-expand-md navbar-dark flex-column flex-sm-row" style="background-color: grey;">
+        <a class="navbar-brand nav-link active" id="navId" href="#tab1Id">Latitude <span class="sr-only">(current)</span></a>
+        <button class="navbar-toggler mr-auto d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+            aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">Menu</button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <!-- Nav tabs -->
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0" id="navId">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">Plots</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownId">
+                        <a class="dropdown-item" href="#tab2Id">Max Temperature</a>
+                        <a class="dropdown-item" href="#tab3Id">Humidity</a>
+                        <a class="dropdown-item" href="#tab4Id">Cloudiness</a>
+                        <a class="dropdown-item" href="#tab5Id">Wind Speed</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#tab6Id" class="nav-link">Comparison</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#tab7Id" class="nav-link">Data</a>
+                </li>
+            </ul>
+        </div>
 
-  <img src="https://cdn2.cycletrader.com/v1/media/5c12075fbdd4693a853d7935.jpg?quality=70" height=384 width=512 alt="Dream bike">
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="tab1Id" role="tabpanel"></div>
+            <div class="tab-pane fade" id="tab2Id" role="tabpanel"></div>
+            <div class="tab-pane fade" id="tab3Id" role="tabpanel"></div>
+            <div class="tab-pane fade" id="tab4Id" role="tabpanel"></div>
+            <div class="tab-pane fade" id="tab5Id" role="tabpanel"></div>
+            <div class="tab-pane fade" id="tab6Id" role="tabpanel"></div>
+            <div class="tab-pane fade" id="tab7Id" role="tabpanel"></div>
+        </div>
 
-  <h3> I don't social media</h3>
-  <h4> But here are some of my favorite things</h4>
+        <script>
+            $('#navId a').click(e => {
+                e.preventDefault();
+                $(this).tab('show');
+            });
+        </script>
+    </header>
 
-  <table style="width:40%">
-    <tr>
-      <th>Books</th>
-      <th>Movies</th>
-      <th>Games</th>
-    </tr>
-    <tr>
-      <td>Man, Woman and Child</td>
-      <td>LOTR</td>
-      <td>Settlers of Catan</td>
-    </tr>
-    <tr>
-      <td>Coma</td>
-      <td>Spy Game</td>
-      <td>Poker</td>
-    </tr>
-  </table>
+    <div class="container-fluid alert alert-dark">
 
+        <div class="container my-5 mx-1">
+            <div class="row">
+                <div class="col-sm-7">
+                    <div class="card">
+                        <div class="card-body">
+                            <h1 class="card-title">Summary: Latitude vs. X</h1>
+                            <hr>
+                            <img class="img-thumbnail float-left mr-3" src="Resources/assets/images/Fig1.png" width="304"
+                                height="236" alt="lat_vs_maxtemp">
+                            <p class="card-text"> The purpose of this project was to analyze how weather changes as you
+                                get
+                                closer to the equator. To accomplish this analysis we first pulled data from
+                                OpenWeatherMap
+                                API to assemble a dataset over
+                                500 cities.</p>
+                            <p class="card-text"> After assembling the dataset, we used Matplotlib to plot various
+                                aspects
+                                of the weather vs latitude. Factors we looked at include temperature, cloudiness, wind
+                                speed and humidity. This site provides the source data and visualizations created as
+                                part
+                                of the analysis, as well as explanations and descriptions of any trends and
+                                correlations
+                                witnessed.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="card">
+                        <div class="card-body">
+                            <h1 class="card-title">Visualizations</h1>
+                            <hr>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <img class="img-fluid mx-1" src="Resources/assets/images/Fig1.png" alt="lat_vs_maxtemp">
+                                    </div>
+                                    <div class="col">
+                                        <img class="img-fluid mx-1" src="Resources/assets/images/Fig2.png" alt="lat_vs_maxtemp">
+                                    </div>
+                                    <div class="w-100"></div>
+                                    <div class="col">
+                                        <img class="img-fluid mx-1" src="Resources/assets/images/Fig3.png" alt="lat_vs_maxtemp">
+                                    </div>
+                                    <div class="col">
+                                        <img class="img-fluid mx-1" src="Resources/assets/images/Fig4.png" alt="lat_vs_maxtemp">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="page-footer font-small bg-dark text-white pt-4">
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2019 Copyright:
+            <a href="https://techbootcamps.utexas.edu/data/" class="text-danger"> UT Austin Data Science Bootcamp</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
 </body>
 
 </html>

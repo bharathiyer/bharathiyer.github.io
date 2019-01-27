@@ -2,31 +2,108 @@
 <html lang="en">
 
 <head>
+    <title>Latitude with Attitude</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
         crossorigin="anonymous">
-    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.13.2/dist/bootstrap-table.min.css">
-
-    <title>Hello, Bootstrap Table!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.13.1/bootstrap-table.min.css">
 </head>
 
 <body>
-    <table data-toggle="table" data-url="Resources/cities.json" data-pagination="true" data-side-pagination="server">
-        <thead>
-            <tr>
-                <th data-field="id">Item ID</th>
-                <th data-field="name">Item Name</th>
-                <th data-field="price">Item Price</th>
-            </tr>
-        </thead>
-    </table>
 
+    <header>
+
+        <nav class="navbar navbar-expand-md navbar-dark flex-column flex-sm-row" style="background-color: rgb(100, 58, 112);">
+            <a class="navbar-brand nav-link active mr-auto" id="navId" href="#tab1Id">Latitude <span class="sr-only">(current)</span></a>
+            <button class="navbar-toggler ml-auto d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+                aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">Menu</button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <!-- Nav tabs -->
+                <ul class="navbar-nav ml-auto mt-2 mt-lg-0" id="navId">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Plots</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownId">
+                            <a class="dropdown-item" href="#tab2Id">Max Temperature</a>
+                            <a class="dropdown-item" href="#tab3Id">Humidity</a>
+                            <a class="dropdown-item" href="#tab4Id">Cloudiness</a>
+                            <a class="dropdown-item" href="#tab5Id">Wind Speed</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#tab6Id" class="nav-link">Comparison</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#tab7Id" class="nav-link">Data</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="tab1Id" role="tabpanel"></div>
+                <div class="tab-pane fade" id="tab2Id" role="tabpanel"></div>
+                <div class="tab-pane fade" id="tab3Id" role="tabpanel"></div>
+                <div class="tab-pane fade" id="tab4Id" role="tabpanel"></div>
+                <div class="tab-pane fade" id="tab5Id" role="tabpanel"></div>
+                <div class="tab-pane fade" id="tab6Id" role="tabpanel"></div>
+                <div class="tab-pane fade" id="tab7Id" role="tabpanel"></div>
+            </div>
+
+        </nav>
+    </header>
+
+    <div class="container-fluid alert alert-dark">
+
+        <div class="container my-5 mx-1">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h1 class="card-title">Data</h1>
+                            <hr>
+                            <p class="card-text"> The following table includes all of the data used for plotting during
+                                the project.</p>
+                            <table class="table table-striped table-inverse table-responsive table-condensed"
+                                data-toggle="table" data-url="Resources/cities.json">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th data-field="City_ID">City_ID</th>
+                                        <th data-field="City">City</th>
+                                        <th data-field="Cloudiness">Cloudiness</th>
+                                        <th data-field="Country">Country</th>
+                                        <th data-field="Date">Date</th>
+                                        <th data-field="Humidity">Humidity</th>
+                                        <th data-field="Lat">Lat</th>
+                                        <th data-field="Lng">Lng</th>
+                                        <th data-field="Max Temp">Max Temp</th>
+                                        <th data-field="Wind Speed">Wind Speed</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="page-footer font-small bg-dark text-white pt-4">
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2019 Copyright:
+            <a href="https://techbootcamps.utexas.edu/data/" class="text-danger"> UT Austin Data Science Bootcamp</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+
+    <!-- JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS, and then Bootstrap Table JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
@@ -35,7 +112,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.6.2/core.min.js"></script>
-    <script src="https://unpkg.com/bootstrap-table@1.13.2/dist/bootstrap-table.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.13.1/bootstrap-table.min.js"></script>
+
 </body>
 
 </html>

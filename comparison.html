@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
 
+
 <head>
     <title>Latitude with Attitude</title>
     <!-- Required meta tags -->
@@ -17,15 +18,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.13.1/bootstrap-table.min.css">
 </head>
 
+
 <body>
 
     <header>
+        <!-- navbar -->
         <nav class="navbar navbar-expand-md navbar-dark flex-column flex-sm-row" style="background-color: rgb(100, 58, 112);">
+            <!-- site name with link back to landing page -->
             <a class="navbar-brand nav-link mr-auto" id="navId" href="index.html">Latitude <span class="sr-only">(current)</span></a>
             <button class="navbar-toggler ml-auto d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
                 aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">Menu</button>
             <div class="collapse navbar-collapse" id="collapsibleNavId">
                 <ul class="navbar-nav ml-auto mt-2 mt-lg-0" id="navId">
+                    <!-- dropdown links to visualization pages -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">Plots</a>
@@ -36,9 +41,11 @@
                             <a class="dropdown-item" href="windspeed.html">Wind Speed</a>
                         </div>
                     </li>
+                    <!-- link to comparison page -->
                     <li class="nav-item">
                         <a href="comparison.html" class="nav-link active">Comparison</a>
                     </li>
+                    <!-- link to data page -->
                     <li class="nav-item">
                         <a href="data.html" class="nav-link">Data</a>
                     </li>
@@ -51,6 +58,7 @@
         <div class="container my-5 mx-1">
             <div class="row">
                 <div class="col-sm-12">
+                    <!-- comparison card -->
                     <div class="card">
                         <div class="card-body">
                             <h3 class="card-title">Comparison: Latitude vs. X</h3>
@@ -87,13 +95,11 @@
         </div>
     </div>
 
-    <!-- Footer -->
     <footer class="page-footer font-small bg-dark text-white pt-4">
         <!-- Copyright -->
         <div class="footer-copyright text-center py-3">© 2019 Copyright:
             <a href="https://techbootcamps.utexas.edu/data/" class="text-danger"> UT Austin Data Science Bootcamp</a>
         </div>
-        <!-- Copyright -->
     </footer>
 
     <!-- JavaScript -->
@@ -108,5 +114,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.13.1/bootstrap-table.min.js"></script>
 
 </body>
+
 
 </html>
